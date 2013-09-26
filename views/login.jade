@@ -1,0 +1,19 @@
+
+form(method = "POST")
+	p Username:
+		input(type="text", username="username")
+	p Password:
+		input(type="text", password="password")
+	p: button Login user
+
+	if users.length > 0
+	ul
+		each person in users
+			li
+				h2=  person.username
+				
+else
+	p no person in Database
+
+p
+	a(href="/signup") Sign up

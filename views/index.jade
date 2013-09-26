@@ -1,0 +1,28 @@
+p
+
+	form(method = "POST")
+	p Username:
+		input(type="text", username="username")
+	p Password:
+		input(type="text", password="password")
+	p: button Login user
+p
+	a(href="/signup/") Sign up
+<h1>Welcome to Coronel's Simple TODO-List</h1>
+
+form(method = "POST")
+	p Enter Task:
+		input(type="text", name="name")
+	p: button Add task
+
+if todoTask.length > 0
+	ul
+		each task in todoTask	
+			li
+				h2=  task.name
+				p	
+					a(href="/update/#{task._id}") Update	
+					a(href="/delete/#{task._id}") / Delete
+
+else
+	p no Task in Database
